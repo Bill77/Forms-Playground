@@ -2,9 +2,9 @@
 ## Branch from an Angular Seed Project
 
 This is a demo project to evalute data driven forms. The goal of data driven forms is to solve some specific requirements:
-1) High volume of forms (20+)
-2) Varied amount of data and form format
-3) Reduce UI complexity by forcing the data (service format) to drive the form.
+1. High volume of forms (20+)
+2. Varied amount of data and form format
+3. Reduce UI complexity by forcing the data (service format) to drive the form.
 
 The ideal is that the service will provide the JSON format for the form and then validation will occur both on client (simple UI validatioN) and server side (complex form submission validation).
 
