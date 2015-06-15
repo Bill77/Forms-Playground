@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute', 'formly', 'ngMessages'])
+angular.module('myApp.view2', ['ngRoute', 'formly', 'formlyBootstrap', 'ngMessages'])
 
 .config(['$routeProvider',
     function ($routeProvider) {
@@ -14,43 +14,56 @@ angular.module('myApp.view2', ['ngRoute', 'formly', 'ngMessages'])
 .controller('View2Controller', [
     function () {
         var viewModel = this;
-        
+
         viewModel.formData = {};
-        
+
         viewModel.formFields = [
-            { 
+            {
                 key: 'username',
-                type: 'text',
-                label: 'User Name',
-                placeholder: 'john smith',
-                required: true,
-                description: 'User Name for the system',
-                minlength: 2
+                type: 'input',
+                templateOptions: {
+                    type: 'text',
+                    label: 'User Name',
+                    placeholder: 'john smith',
+                    required: true,
+                    description: 'User Name for the system',
+                    minlength: 2
+                }
             }, {
                 key: 'password',
-                type: 'password',
-                label: 'Password',
-                required: true,
-                disabled: false,
-                hideExpression: '!username'
+                type: 'input',
+                templateOptions: {
+                    type: 'password',
+                    label: 'Password',
+                    required: true,
+                    disabled: false,
+                    hideExpression: '!username'
+                }
             }, {
                 "key": "love",
-                "type": "number",
-                "label": "How much love?",
-                "min": 0,
-                "max": 100,
-                "maxlength": 4,
-                "required": true
+                "type": "input",
+                templateOptions: {
+                    type: 'number',
+                    "label": "How much love?",
+                    "min": 0,
+                    "max": 100,
+                    "maxlength": 4,
+                    "required": true
+                }
             }, {
-                type: 'number',
-                maxlength: 12
+                type: 'input',
+                templateOptions: {
+                    label: 'random number',
+                    type: 'number',
+                    maxlength: 12
+                }
             }
         ];
-        
+
         viewModel.formOptions = {
-            uniqueFormId: 'myFormId'
+            //uniqueFormId: 'myFormId'
         };
-        
+
         viewModel.onSubmit = function() {
             console.log('form submitted:', viewModel.formData);
         };

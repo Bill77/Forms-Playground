@@ -1,22 +1,26 @@
 {
-    "name": "angular-seed",
-    "description": "A starter project for AngularJS",
-    "version": "0.0.0",
-    "homepage": "https://github.com/angular/angular-seed",
-    "license": "MIT",
-    "private": true,
-    "dependencies": {
-        "angular": "1.3.x",
-        "angular-route": "1.3.x",
-        "angular-loader": "1.3.x",
-        "angular-mocks": "1.3.x",
-        "angular-messages": "1.3.x",
-        "bootstrap": "3.x",
-        "angular-bootstrap": "0.11.x",
-        "angular-agility": "0.8.x",
-        "angular-formly": "1.0.x",
-        "angular-formly-templates-bootstrap": "^0.0.1",
-        "angular-formly-templates-vanilla": "^0.0.1",
-        "html5-boilerplate": "~4.3.0"
-    }
+  "name": "angular-seed",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "html5-boilerplate": "~5.2.0",
+    "angular-messages": "~1.4.x",
+    "bootstrap": "~3.x.x",
+    "angular-bootstrap": "~0.x",
+    "angular-agility": "0.8.x",
+    "angular-formly": "^6.x.x",
+    "angular-formly-templates-bootstrap": "^4.x.x",
+    "angular-formly-templates-vanilla": "^3.x.x"
+  },
+  "resolutions": {
+    "angular-formly": "^6.x.x",
+    "angular": "~1.4.0"
+  }
 }
