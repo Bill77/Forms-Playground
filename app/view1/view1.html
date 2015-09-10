@@ -1,6 +1,7 @@
 <div class="container">
     <p>Demo of Angular Formly</p>
-    <formly-form novalidate result="View1.formData" fields="View1.formFields" options="View1.formOptions" ng-submit="View1.onSubmit()">
-        <button type="submit" class="btn">Form Submit</button>
-    </formly-form>
+    <form ng-submit="View1.onSubmit()" novalidate>
+      <formly-form model="View1.model" fields="View1.formFields" options="View1.formOptions"></formly-form>
+      <button type="submit" class="btn">Form Submit</button>
+    </form>
 </div>

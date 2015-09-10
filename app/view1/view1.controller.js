@@ -1,25 +1,11 @@
 (function() {
-  'use strict';
-   
-  angular
-    .module('myApp.view1', [
-      'ngRoute', 
-      'formly', 
-      'formlyBootstrap', 
-      'ngMessages'])
-    .config(routerConfig)
+  'use strict'
+  
+  angular.module('myApp.view1')
     .controller('View1Controller', controller);
-      
-  routerConfig.$inject = ['$routeProvider'];        
-  function routerConfig($routeProvider) {
-      $routeProvider.when('/view1', {
-          templateUrl: 'view1/view1.html',
-          controller: 'View1Controller',
-          controllerAs: "View1"
-      });
-  };
-        
-  function controller() {
+    
+  controller.$inject = ['$timeout']        
+  function controller($timeout) {
       var viewModel = this;
       var fields = [
         {
@@ -61,18 +47,36 @@
               type: 'number',
               maxlength: 12
           }
+        }, {
+          key: "AsyncTest",
+          type: 'input',
+          templateOptions: {
+            label: 'Async Testing',
+            type: 'number'
+          },
+          asyncValidators: {
+            isCorrectNumber: {
+              expression: function($viewValue, $modelValue, scope) {
+                scope.options.templateOptions.loading = true;                
+                return $timeout(function() {
+                  scope.options.templateOptions.loading = false;
+                  if ($viewValue != 7) {
+                    throw new Error('Does not equal 7');                   
+                  } 
+                }, 500)},
+              message: 'The magic number is not 7' 
+            }
+          }          
         }
       ];
       
       function submit() {
-          console.log('form submitted:', viewModel.formData);
+          console.log('form submitted:', viewModel.model);
       };
       
-      viewModel.formData = {};
-      viewModel.formOptions = {};
-      viewModel.onSubmit = submit;
+      viewModel.model = {};
       viewModel.formFields = fields;
-  };   
+      viewModel.formOptions = {};
+      viewModel.onSubmit = submit;      
+  };
 })()
-
-
