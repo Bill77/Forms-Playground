@@ -17,6 +17,9 @@
     "api-check": "^7.5.0",
     "bootstrap": "^3.3.5",
     "bootstrap-npm": "^4.1.0",
+    "chai": "^3.3.0",
+    "chai-as-promised": "^5.1.0",
+    "cucumber": "^0.5.3",
     "http-server": "^0.6.1",
     "jasmine-core": "^2.3.4",
     "karma": "~0.12",
@@ -27,7 +30,7 @@
     "protractor": "^2.1.0",
     "shelljs": "^0.2.6"
   },
-  "scripts": {    
+  "scripts": {
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
     "pretest": "npm install",

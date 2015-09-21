@@ -30,22 +30,16 @@
               hideExpression: '!username'
           }
         }, {
-          "key": "love",
+          "key": "randomNumber",
+          id: "randomNumber",
           "type": "input",
           templateOptions: {
               type: 'number',
-              "label": "How much love?",
+              "label": "Enter a number (0-100)",
               "min": 0,
               "max": 100,
-              "maxlength": 4,
+              "maxlength": 3,
               "required": true
-          }
-        }, {
-          type: 'input',
-          templateOptions: {
-              label: 'random number',
-              type: 'number',
-              maxlength: 12
           }
         }, {
           key: "AsyncTest",
@@ -61,7 +55,7 @@
                 return $timeout(function() {
                   scope.options.templateOptions.loading = false;
                   if ($viewValue != 7) {
-                    throw new Error('Does not equal 7');                   
+                    //throw new Error('Does not equal 7');                   
                   } 
                 }, 500)},
               message: 'The magic number is not 7' 
